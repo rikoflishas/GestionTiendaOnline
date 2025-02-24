@@ -20,7 +20,7 @@ ordenarlos alfabéticamente y generar una lista con los nombres.
  */
 console.log('----------------------------------------------------------------------------------------');
 
-// Productos que cuestan menos de 100
+// FILTER. Productos que cuestan menos de 100
 const lessThan100 = products.filter( product => product.cost < 100 );
 
 console.log("Productos que cuestan menos de $100: ");
@@ -32,15 +32,28 @@ lessThan100.forEach( product => {
     console.log('----------------------------------------------------------------------------------------');
 });
 
-//En orden alfabetico
+//SORT. En orden alfabetico
 console.log("Productos en orden alfabetico: ");
 console.log('----------------------------------------------------------------------------------------');
-const alphabeticalOrder = products.sort((a,b) => {
+
+const alphabeticalOrder = products.sort( (a,b) => {
     return a.name.localeCompare(b.name);
 });
 
 alphabeticalOrder.forEach ( product => {
     console.log(`Nombre: ${product.name}`);
+    console.log(`Precio: ${product.cost}`);
+    console.log(`Categoria: ${product.category}`);
+    console.log('----------------------------------------------------------------------------------------');
 });
 
- 
+//MAP. Generar otro arreglo que solo contenga los nombres de los productos. 
+console.log("Imprimiendo solo nombres de los productos: ");
+console.log('----------------------------------------------------------------------------------------');
+
+const productNames = products.map(product => product.name);
+// productNames.forEach(product => {
+//     console.log(`Nombres: ${productNames}`);
+// });
+
+console.log(`Nombres: ${productNames}`);
